@@ -1,0 +1,39 @@
+.body {
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.71;
+  letter-spacing: 0.03em;
+  color: var(--general_color);
+}
+
+.container {
+  padding-left: 15px;
+  padding-right: 15px;
+  width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.list,
+.paragraf,
+.container__title {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sections-title {
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.16;
+  text-align: center;
+  color: var(--title_color);
+  margin: 0 0 50px 0;
+}

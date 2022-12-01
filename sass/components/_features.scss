@@ -1,0 +1,44 @@
+.features {
+    padding-top: 94px;
+    padding-bottom: 94px;
+  }
+  
+  .hidden-title {
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    border: 0;
+    padding: 0;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    margin: -1px;
+  }
+  
+  .features__list {
+    display: flex;
+  }
+  
+  .features__item:not(:last-child) {
+    margin-right: 30px;
+  }
+  
+  .title__features {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.14;
+    text-transform: uppercase;
+    color: var(--title_color);
+  
+    margin-bottom: 10px;
+  }
+  
+  .features__container {
+    background: #f5f4fa;
+    border-radius: 4px;
+    width: 270px;
+    height: 120px;
+    @extend %flex-standart;
+    margin-bottom: 30px;
+  }

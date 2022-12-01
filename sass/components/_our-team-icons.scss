@@ -1,0 +1,32 @@
+.social-ico {
+  display: flex;
+}
+
+.social-ico__link {
+  @extend %flex-standart;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  .team__container &:hover,
+  .team__container &:focus {
+    background-color: var(--accent_color);
+  }
+}
+
+.social-ico__item:not(:last-child) {
+  margin-right: 10px;
+}
+
+.social-ico__svg {
+  fill: #afb1b8;
+
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  .team__container .social-ico__link:hover &,
+  .team__container .social-ico__link:focus & {
+    fill: var(--general_bg);
+  }
+}

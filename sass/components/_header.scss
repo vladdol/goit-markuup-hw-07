@@ -1,0 +1,18 @@
+.header {
+  border: 1px solid #ececec;
+}
+
+.header__box {
+  @extend %flex-standart;
+
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.02em;
+
+  color: var(--title_color);
+}
+
+.nav {
+  @extend %flex-standart;
+}
