@@ -20,6 +20,10 @@
     background-color: var(--accent_color);
     border-color: var(--accent_color);
   }
+  .checkbox__input:focus + & {
+    border-color: var(--accent_color);
+  }
+
 }
 
 .checkbox__svg {

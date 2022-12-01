@@ -29,6 +29,15 @@
   }
 }
 
+.footer__link {
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:hover,
+  &:focus {
+    color: var(--general_bg);
+  }
+}
+
 .footer__two {
   margin-left: 70px;
 }
@@ -43,13 +52,20 @@
   margin-bottom: 20px;
 }
 
-.footer__two .social-ico__item {
+.social-ico__item--grey {
   background-color: rgba(255, 255, 255, 0.1);
   border-radius: 50%;
   @extend %flex-standart;
+
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:hover,
+  &:focus {
+    background-color: var(--accent_color);
+  }
 }
 
-.footer__two .social-ico__svg {
+.social-ico__svg--white {
   fill: #fff;
 }
 
@@ -84,12 +100,13 @@
   width: 358px;
   height: 50px;
   margin-right: 12px;
+  outline: transparent;
 
-  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
   &:focus {
-  border-color: #fff;
-}
+    border-color: var(--accent_color);
+  }
 }
 
 .footer__send-svg {

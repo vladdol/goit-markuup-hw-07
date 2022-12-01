@@ -9,10 +9,23 @@
   --footer_color: #2f303a;
 }
 
-.checkbox__new, .checkbox, .modal__button-close, .filter__button, .filter__list, .footer__two .social-ico__item, .social-ico__link, .works__description, .features__container, .button, .contact-header__link, .nav, .header__box {
+.checkbox__new, .checkbox, .modal__button-close, .filter__button, .filter__list, .social-ico__item--grey, .social-ico__link, .works__description, .features__container, .button, .contact-header__link, .nav, .header__box {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.hidden-title {
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  margin: -1px;
 }
 
 .body {
@@ -208,23 +221,13 @@
   padding: 10px 32px;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+.button:hover, .button:focus {
+  background-color: #188CE8;
+}
 
 .features {
   padding-top: 94px;
   padding-bottom: 94px;
-}
-
-.hidden-title {
-  position: absolute;
-  white-space: nowrap;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-  border: 0;
-  padding: 0;
-  clip: rect(0 0 0 0);
-  clip-path: inset(50%);
-  margin: -1px;
 }
 
 .features__list {
@@ -351,7 +354,7 @@
   border-radius: 50%;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.team__container .social-ico__link:hover, .team__container .social-ico__link:focus {
+.social-ico__link:hover, .social-ico__link:focus {
   background-color: var(--accent_color);
 }
 
@@ -363,7 +366,7 @@
   fill: #afb1b8;
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.team__container .social-ico__link:hover .social-ico__svg, .team__container .social-ico__link:focus .social-ico__svg {
+.social-ico__link:hover .social-ico__svg, .social-ico__link:focus .social-ico__svg {
   fill: var(--general_bg);
 }
 
@@ -432,6 +435,13 @@
   margin-bottom: 9px;
 }
 
+.footer__link {
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.footer__link:hover, .footer__link:focus {
+  color: var(--general_bg);
+}
+
 .footer__two {
   margin-left: 70px;
 }
@@ -446,12 +456,16 @@
   margin-bottom: 20px;
 }
 
-.footer__two .social-ico__item {
+.social-ico__item--grey {
   background-color: rgba(255, 255, 255, 0.1);
   border-radius: 50%;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.social-ico__item--grey:hover, .social-ico__item--grey:focus {
+  background-color: var(--accent_color);
 }
 
-.footer__two .social-ico__svg {
+.social-ico__svg--white {
   fill: #fff;
 }
 
@@ -485,10 +499,11 @@
   width: 358px;
   height: 50px;
   margin-right: 12px;
-  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  outline: transparent;
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .footer__input:focus {
-  border-color: #fff;
+  border-color: var(--accent_color);
 }
 
 .footer__send-svg {
@@ -512,7 +527,7 @@
   padding: 6px 22px;
   border: none;
   cursor: pointer;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1), color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1), color 250ms cubic-bezier(0.4, 0, 0.2, 1), color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .filter__button:hover, .filter__button:focus {
   background-color: var(--accent_color);
@@ -536,7 +551,15 @@
 .cards__item {
   transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.cards__item:hover, .cards__item:focus {
+.cards__item:hover {
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
+}
+
+.cards__link {
+  outline: transparent;
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.cards__link:focus .cards__item {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 
@@ -633,7 +656,7 @@
   cursor: pointer;
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.modal__button-close:hover {
+.modal__button-close:hover, .modal__button-close:focus {
   fill: var(--accent_color);
 }
 
@@ -733,6 +756,9 @@
 }
 .checkbox__input:checked + .checkbox__new {
   background-color: var(--accent_color);
+  border-color: var(--accent_color);
+}
+.checkbox__input:focus + .checkbox__new {
   border-color: var(--accent_color);
 }
 
